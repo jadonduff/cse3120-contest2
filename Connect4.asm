@@ -2,13 +2,18 @@
 ; Authors: Jadon Duff and Ryan Gomes
 
 INCLUDE Irvine32.inc
+INCLUDE GraphWin.inc
+
+.data
 
 .code
-main PROC
-	mov		eax, yellow + (blue * 16)
-	call	SetTextColor
-	call	ClrScr
+WinMain PROC
 
-	exit
-main ENDP
-END main
+WinMain ENDP
+
+WinProc PROC,
+	hWnd:DWORD, localMsg:DWORD, wParam:DWORD, lParam:DWORD
+
+WinProc ENDP
+
+END WinMain
